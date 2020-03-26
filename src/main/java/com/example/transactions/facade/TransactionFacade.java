@@ -1,7 +1,7 @@
 package com.example.transactions.facade;
 
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -27,5 +27,9 @@ public class TransactionFacade {
 		}catch(Exception e) {
 			throw new Exception("Não foi possível inserir transação. Tente novamente mais tarde.");
 		}
+	}
+	
+	public Iterable<TransactionVO> listTxns(){
+		return txnRepo.findAll();
 	}
 }

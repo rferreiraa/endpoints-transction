@@ -9,12 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
 import lombok.Setter;
+
 
 @Getter
 @Setter
@@ -39,15 +39,9 @@ public class TransactionVO {
 	private Double value;
 	
 	@Column(name="ID_CARD_APPLICATION")
-	private Long cardApplication;
+	private String cardApplication;
 	
 	@Column(name="ID_STATUS")
-	private Long status;
-
-	@Transient
-	private String dscStatus;
-	
-	@Transient
-	private String dscCardApp;
+	private String status;
 	
 }
